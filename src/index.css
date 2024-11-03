@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@media (min-width: 768px) {
+  .backdrop-blur-desktop {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media (max-width: 767px) {
+  .backdrop-blur-mobile {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* Hide scrollbar on mobile devices */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 72, 0.8);
+}
+
+
+/* Applying the animations */
+.animate-upwards {
+  animation: moveUpwards 15s linear infinite;
+  animation-delay: 0s;
+}
+.animate-downwards {
+  animation: moveDownwards 15s linear infinite;
+  animation-delay: 0s;
+}
+
+/* Keyframes for left images: move down continuously (for larger screens) */
+@keyframes moveUpwards {
+  0% {
+    transform: translateY(-100vh); /* Start from above the viewport */
+  }
+  100% {
+    transform: translateY(100vh); /* Move down and exit below the viewport */
+  }
+}
+
+/* Keyframes for right images: move up continuously (for larger screens) */
+@keyframes moveDownwards {
+  0% {
+    transform: translateY(100vh); /* Start from below the viewport */
+  }
+  100% {
+    transform: translateY(-100vh); /* Move up and exit above the viewport */
+  }
+}
+
+
+
+
